@@ -7,15 +7,12 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   font-style: normal;
-  font-size: 20px;
   line-height: 150%;
-  background-color: #dff6f6;
-  background-image: url("../img/bg.png");
-  background-size: 800px;
-  background-repeat: repeat;
-  color: #305050;
+  color: #fff;
+  width: 100%;
+  background-color: black;
 }
 
 .logo {
@@ -27,22 +24,46 @@ h1 {
   width: 100%;
   padding-top: 1em;
   margin: 0;
-  font-family: "Unlock", sans-serif;
+  font-family: "Galindo", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 44px;
+  font-size: 2em;
   text-align: center;
+}
+
+h1 span {
+  font-style: italic;
+  font-weight: bold;
+  line-height: 1em;
+  font-size: 3em;
+  color: #39FF14;
 }
 
 .container {
   background: radial-gradient(50% 50% at 50% 50%,
-    rgba(167, 237, 237, 0.3) 0%,
-    rgba(156, 226, 226, 0) 100%);
+    rgba(202, 167, 237, 0.3) 0%,
+    rgba(180, 156, 226, 0) 100%);
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   width: 90%;
+}
+
+a {
+  color: hotpink;
+  text-decoration: none;
+}
+
+.credit {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-family: "Source Sans 3", sans-serif;
+  font-style: normal;
+  font-size: .8 em;
+  line-height: 150%;
+  color: #fff;
 }
 
 .hide {
@@ -61,9 +82,10 @@ h1 {
 }
 
 .word-in-progress {
-  letter-spacing: 15px;
-  color: #28bdbd;
-  font-size: 30px;
+  font-family: "Galindo", sans-serif;
+  letter-spacing: 1em;
+  color:  #39FF14;
+  font-size: 1.5em;
 }
 
 .guessed-letters {
@@ -89,7 +111,7 @@ h1 {
 .guess-form label {
   width: 100%;
   font-weight: normal;
-  font-size: 14px;
+  font-size: .8em;
   text-align: center;
 }
 
@@ -99,22 +121,23 @@ input {
   font-size: 1.5em;
   margin-top: 0.5em;
   padding: 0.5em;
-  border: 3px solid #28bdbd;
+  border: 3px solid #05A9FF;
 }
 
 input:active,
 input:focus {
   outline: 0;
-  border: 4px solid #28bdbd;
+  border: 4px solid #05A9FF;
 }
 
 .guess,
-.play-again {
+.play-again, .hint-button {
+  font-family: "Galindo", sans-serif;
   padding: 1em 3em;
   border-radius: 50px;
   margin-top: 1em;
   color: #fff;
-  background: #ff8d5c;
+  background-color: #05A9FF;
   font-size: 1em;
   align-self: center;
   outline: none;
@@ -124,10 +147,13 @@ input:focus {
 
 .guess:active,
 .play-again:active,
+.hint-button:active,
 .guess:focus,
 .play-again:focus,
+.hint-button:focus,
 .guess:hover,
-.play-again:hover {
+.play-again:hover,
+.hint-button:hover {
   outline: 0;
   transform: scale(0.98);
   filter: brightness(0.9);
@@ -137,7 +163,7 @@ input:focus {
 /* animatied background */
 .win {
   padding: 0 1em;
-  background: linear-gradient(-45deg, #ff9d64, #f5620c);
+  background: linear-gradient(-45deg, #ff9d64, #FF5B05);
   background-size: 400% 400%;
   animation: gradient 2s ease infinite;
 }

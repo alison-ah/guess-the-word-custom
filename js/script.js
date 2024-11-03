@@ -6,19 +6,24 @@ const remainingGuessesElement = document.querySelector(".remaining");
 const remainingGuessesSpan = document.querySelector(".remaining span");
 const messages = document.querySelector(".message")
 const playAgainButton = document.querySelector(".play-again");
+const hintMessage = document.querySelector(".hint-message");
+const hintButton = document.querySelector(".hint-button");
+
 
 let word = "It's giving";
+let hint = "This phrase is used to describe someone emanating a vibe, style or mood.";
+
 let guessedLettersList = [];
 let remainingGuesses = 8;
 
-const getWord = async function () {
-  const request = await fetch("https://gist.githubusercontent.com/skillcrush-curriculum/7061f1d4d3d5bfe47efbfbcfe42bf57e/raw/5ffc447694486e7dea686f34a6c085ae371b43fe/words.txt");
-  const words = await request.text();
-  const wordArray = words.split("\n");
-  const randomIndex = Math.floor(Math.random() * wordArray.length);
-  word = wordArray[randomIndex].trim();
-  placeholder(word);
-}; 
+//const getWord = async function () {
+//  const request = await fetch("https://gist.githubusercontent.com/skillcrush-curriculum/7061f1d4d3d5bfe47efbfbcfe42bf57e/raw/5ffc447694486e7dea686f34a6c085ae371b43fe/words.txt");
+//  const words = await request.text();
+//  const wordArray = words.split("\n");
+//  const randomIndex = Math.floor(Math.random() * wordArray.length);
+//  word = wordArray[randomIndex].trim();
+//  placeholder(word);
+//}; 
 
 // Fire off the game
 //getWord();
@@ -107,7 +112,7 @@ const updateGuessesRemaining = function (guess) {
         messages.innerText = `The word or phrase does not include ${guess}. Please try again.`;
         remainingGuesses -= 1;
     } else {
-        messages.innerText = `Good guess! The word or phrase includes the letter ${guess}.`;
+        messages.innerText = `Good guess! Keep going!`;
     }
 
     if (remainingGuesses === 0) {
@@ -128,6 +133,13 @@ const checkIfWin = function () {
       startOver();
     }
 };
+
+hintButton.addEventListener("click", function () {
+    //get the definition as a hint
+    hintMessage.innerHTML = `<strong>Hint:</strong> ${hint}`
+    hintMessage.classList.remove("hide");
+    hintButton.classList.add("hide");
+});
 
 const startOver = function() {
     guessButton.classList.add("hide");
