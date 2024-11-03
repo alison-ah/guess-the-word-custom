@@ -129,7 +129,8 @@ const updateGuessesRemaining = function (guess) {
 const checkIfWin = function () {
     if (word.toUpperCase() === progress.innerText) {
       messages.classList.add("win");
-      messages.innerHTML = `<p class="highlight">You guessed the correct word! Congrats!</p>`;
+      messages.innerHTML = `<p>You guessed the correct slang! Slay!<br><img src="https://media.giphy.com/media/GiIwrmtEV6gEgJVvHq/giphy.gif?cid=ecf05e47vg710g1rqs7nfdysm2e47s9d3rzs0z637j2wllo2&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Girl gives heart symbol with hands">
+</p>`;
       startOver();
     }
 };

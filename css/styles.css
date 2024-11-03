@@ -50,20 +50,8 @@ h1 span {
   width: 90%;
 }
 
-a {
-  color: hotpink;
-  text-decoration: none;
-}
-
-.credit {
-  width: 100%;
-  text-align: center;
-  margin: 0;
-  font-family: "Source Sans 3", sans-serif;
-  font-style: normal;
-  font-size: .8 em;
-  line-height: 150%;
-  color: #fff;
+.remaining {
+  font-size: 1.15em;
 }
 
 .hide {
@@ -83,9 +71,9 @@ a {
 
 .word-in-progress {
   font-family: "Galindo", sans-serif;
-  letter-spacing: 1em;
+  letter-spacing: .8em;
   color:  #39FF14;
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 
 .guessed-letters {
@@ -160,10 +148,27 @@ input:focus {
   color: white;
 }
 
+.credit {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-family: "Source Sans 3", sans-serif;
+  font-style: normal;
+  font-size: 0.75 em;
+  line-height: 150%;
+  color: #fff;
+}
+
+a {
+  color: hotpink;
+  text-decoration: none;
+}
+
+
 /* animatied background */
 .win {
   padding: 0 1em;
-  background: linear-gradient(-45deg, #ff9d64, #FF5B05);
+  background: linear-gradient(-45deg, #e36d29, #c64703);
   background-size: 400% 400%;
   animation: gradient 2s ease infinite;
 }
