@@ -7,7 +7,7 @@ const remainingGuessesSpan = document.querySelector(".remaining span");
 const messages = document.querySelector(".message")
 const playAgainButton = document.querySelector(".play-again");
 
-let word = "magnolia";
+let word = "It's giving";
 let guessedLettersList = [];
 let remainingGuesses = 8;
 
@@ -21,7 +21,7 @@ const getWord = async function () {
 }; 
 
 // Fire off the game
-getWord();
+//getWord();
 
 // Display symbols as placeholder for the word's letters
 const placeholder = function (word) {
@@ -49,13 +49,13 @@ guessButton.addEventListener("click", function (e) {
 });
 
 const validateInput = function (input) {
-    const acceptedLetter = /[a-zA-Z]/;
+    const acceptedLetter = "";
     if (input.length === 0) {
-        messages.innerText = `Please type a letter.`;
+        messages.innerText = `Please type a character.`;
     } else if (input.length > 1) {
-        messages.innerText = `Please enter ONE letter at a time.`;
+        messages.innerText = `Please enter ONE character at a time.`;
     } else if (!input.match(acceptedLetter)) {
-        messages.innerText = `Please enter a letter.`;
+        messages.innerText = `Please enter a character.`;
     } else {
         return input;
     }
@@ -104,14 +104,14 @@ const updateWord = function (guessedLettersList) {
 const updateGuessesRemaining = function (guess) {
     const upperWord = word.toUpperCase();
     if (!upperWord.includes(guess)) {
-        messages.innerText = `The word does not include ${guess}. Please try again.`;
+        messages.innerText = `The word or phrase does not include ${guess}. Please try again.`;
         remainingGuesses -= 1;
     } else {
-        messages.innerText = `Good guess! The word include the letter ${guess}.`;
+        messages.innerText = `Good guess! The word or phrase includes the letter ${guess}.`;
     }
 
     if (remainingGuesses === 0) {
-        messages.innerHTML = `Game over. The word was <span class="highlight">${word}</span>.`;
+        messages.innerHTML = `Game over. The word or phrase was <span class="highlight">${word}</span>.`;
         remainingGuessesSpan.innerText = `${remainingGuesses} guess`;
         startOver();
     } else if (remainingGuesses === 1) {
