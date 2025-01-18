@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+html {
+  display: flex;
+  width: 100%;
+}
+
 body {
   display: flex;
   align-items: center;
@@ -47,6 +52,7 @@ h1 span {
 
 .remaining {
   font-size: 1.5em;
+  text-align: center;
 }
 
 .hide {
@@ -66,9 +72,11 @@ h1 span {
 
 .word-in-progress {
   font-family: "Galindo", sans-serif;
+  text-align: center;
   letter-spacing: .8em;
   color:  #39FF14;
   font-size: 1.75em;
+  width: 95%;
 }
 
 .guessed-letters {
@@ -83,6 +91,11 @@ h1 span {
 
 .message {
   text-align: center;
+  width: 90%;
+}
+
+img {
+  width: 100%;
 }
 
 .guess-form {
