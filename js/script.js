@@ -144,7 +144,7 @@ hintButton.addEventListener("click", function () {
 const startOver = function() {
     guessButton.classList.add("hide");
     remainingGuessesElement.classList.add("hide");
-    guessedLetters.classList.add("hide");
+    //guessedLetters.classList.add("hide"); I've hidden the "guessed-letters" until I can figure out how to display a "space" without confusion.
     playAgainButton.classList.remove("hide");
     hintButton.classList.add("hide");
 };
