@@ -15,11 +15,6 @@ body {
   background-color: black;
 }
 
-.logo {
-  width: 70%;
-  max-width: 484px;
-}
-
 h1 {
   width: 100%;
   padding-top: 1em;
@@ -73,7 +68,7 @@ h1 span {
   font-family: "Galindo", sans-serif;
   letter-spacing: .8em;
   color:  #39FF14;
-  font-size: 1.25em;
+  font-size: 1.5em;
 }
 
 .guessed-letters {
@@ -149,14 +144,20 @@ input:focus {
 }
 
 .credit {
+  align-items: center;
   width: 100%;
   text-align: center;
   margin: 0;
   font-family: "Source Sans 3", sans-serif;
   font-style: normal;
-  font-size: 0.75 em;
+  font-size: 0.75em;
   line-height: 150%;
   color: #fff;
+}
+
+.credit span{
+  font-size: 0.5em;
+  padding-top: 1em; 
 }
 
 a {

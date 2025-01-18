@@ -9,30 +9,31 @@ const playAgainButton = document.querySelector(".play-again");
 const hintMessage = document.querySelector(".hint-message");
 const hintButton = document.querySelector(".hint-button");
 
-
-let word = "It's giving";
-let hint = "This phrase is used to describe someone emanating a vibe, style or mood.";
-
 let guessedLettersList = [];
 let remainingGuesses = 8;
+let word, hint; 
 
-//const getWord = async function () {
-//  const request = await fetch("https://gist.githubusercontent.com/skillcrush-curriculum/7061f1d4d3d5bfe47efbfbcfe42bf57e/raw/5ffc447694486e7dea686f34a6c085ae371b43fe/words.txt");
-//  const words = await request.text();
-//  const wordArray = words.split("\n");
-//  const randomIndex = Math.floor(Math.random() * wordArray.length);
-//  word = wordArray[randomIndex].trim();
-//  placeholder(word);
-//}; 
+const getSlang = async function () {
+    const res = await fetch ("https://gist.githubusercontent.com/alison-ah/697e4e13a422d5fd9d5814f361659519/raw/f5ac311b01b77ab3a93d14c3dc64d760f2e085ca/genz_terms.json");
+    const slang = await res.json();
+    selectRandomSlang (slang);
+};
+
+const selectRandomSlang = function (slang) {
+    const randomIndex = Math.floor(Math.random() * slang.length);
+    const randomSlang = slang[randomIndex];
+    word = randomSlang.term;
+    hint = randomSlang.definition;
+}
+
 
 // Fire off the game
-//getWord();
+getSlang();
 
 // Display symbols as placeholder for the word's letters
 const placeholder = function (word) {
     const placeholderLetters = [];
     for (const letter of word) {
-        console.log(letter);
         placeholderLetters.push("●");
     }
     progress.innerText = placeholderLetters.join("");
@@ -72,7 +73,6 @@ const makeGuess = function (guess) {
         messages.innerText = `You've already guessed that letter. Please try again.`;
     } else {
         guessedLettersList.push(guess);
-        console.log(guessedLettersList);
         updateGuessesRemaining(guess);
         updatePage();
         updateWord(guessedLettersList);
@@ -101,7 +101,6 @@ const updateWord = function (guessedLettersList) {
         revealWord.push("●");
       }
     }
-    // console.log(revealWord);
     progress.innerText = revealWord.join("");
     checkIfWin();
 };
@@ -116,7 +115,7 @@ const updateGuessesRemaining = function (guess) {
     }
 
     if (remainingGuesses === 0) {
-        messages.innerHTML = `Game over. The word or phrase was <span class="highlight">${word}</span>.`;
+        messages.innerHTML = `Game over. The slang was "${word}." Better luck next time!<br><img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTdhZzZuZHpyeGNuZmltdDY1eTI2bHRrb2t0ZDFjNnlvZGF6eXpmZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ESzxkrVH853WoBiBgP/giphy.gif" alt="Noob"></span>.`;
         remainingGuessesSpan.innerText = `${remainingGuesses} guess`;
         startOver();
     } else if (remainingGuesses === 1) {
@@ -129,7 +128,7 @@ const updateGuessesRemaining = function (guess) {
 const checkIfWin = function () {
     if (word.toUpperCase() === progress.innerText) {
       messages.classList.add("win");
-      messages.innerHTML = `<p>You guessed the correct slang! Slay!<br><img src="https://media.giphy.com/media/GiIwrmtEV6gEgJVvHq/giphy.gif?cid=ecf05e47vg710g1rqs7nfdysm2e47s9d3rzs0z637j2wllo2&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Girl gives heart symbol with hands">
+      messages.innerHTML = `<p>You guessed the correct slang! <i>Slay!</i><br><img src="https://media.giphy.com/media/GiIwrmtEV6gEgJVvHq/giphy.gif?cid=ecf05e47vg710g1rqs7nfdysm2e47s9d3rzs0z637j2wllo2&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Girl gives heart symbol with hands">
 </p>`;
       startOver();
     }
@@ -147,6 +146,7 @@ const startOver = function() {
     remainingGuessesElement.classList.add("hide");
     guessedLetters.classList.add("hide");
     playAgainButton.classList.remove("hide");
+    hintButton.classList.add("hide");
 };
 
 playAgainButton.addEventListener("click", function () {
@@ -158,11 +158,14 @@ playAgainButton.addEventListener("click", function () {
     remainingGuessesSpan.innerText = `${remainingGuesses} guesses`;
     guessedLetters.innerHTML = "";
     messages.innerText = "";
-    getWord();
+    getSlang();
 
     //reset UI
     guessButton.classList.remove("hide");
     remainingGuessesElement.classList.remove("hide");
     guessedLetters.classList.remove("hide");
     playAgainButton.classList.add("hide");
+    hintButton.classList.remove("hide");
+    hintMessage.innerHTML = "";
+    progress.innerText = "";
 });

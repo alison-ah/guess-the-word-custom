@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess the Word</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Galindo&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Galindo&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js" defer></script>
-    <script src="https://kit.fontawesome.com/d0a0932fff.js" crossorigin="anonymous"></script>
-
+    <script
+      src="https://kit.fontawesome.com/d0a0932fff.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
     <div class="container">
       <h1>
         Guess the<br><span>GenZ</span><br>slang
-        <!--<img class="logo" src="img/logo.png" alt="Guess The Word" />-->
       </h1>
       <p class="message"></p>
       <p class="hint-message hide"></p>
@@ -27,8 +30,12 @@
       <!--I've hidden the "guessed-letters" until I can figure out how to display a "space" without confusion.-->
       <ul class="guessed-letters hide"></ul>
       <form class="guess-form">
-        <label for="letter">Type one character*:<br><i>*This can be a letter, special character, or a space.</i></label>
-        <input type="text" id="letter" name="letter" class="letter" />
+        <label for="letter">
+          Type one character*:<br><i>
+            *This can be a letter, special character, or a space.</i>
+          </label>
+        
+        <input type="text" id="letter" name="letter" class="letter">
         <div class="form-element button-element">
           <button class="guess">Guess!</button>
         </div>
@@ -36,9 +43,27 @@
 
       <button class="hint-button">Need a hint?</button>
 
-      <button class="play-again hide">Play Again!</button><br><br>
-      <p class = "credit">Original styles provided by <a href="https://skillcrush.github.io/guess-the-word/" target="_blank"><i class="fa-solid fa-paw"></i> Skillcrush</a><br>Coded and re-designed by <a href="https://github.com/alison-ah" target="_blank"><i class="fa-brands fa-github"></i> Alison Holland</a><br>Terms and definitions by <a href="https://thestoryexchange.org/gen-alpha-slang-101-how-to-understand-kids-this-back-to-school-season/?fbclid=IwZXh0bgNhZW0BMAABHfA6Ui40eDHzbtrGKzZKRp8FtYKy8s2PqGhQ35W50scFY5X-d_ODuj6Bbw_aem_Epr2ndmlEkAUF3Yw5JG7KQ&gad_source=1&gclid=Cj0KCQjwm5e5BhCWARIsANwm06h48PKIIWbeQo7iRw1-HdrMUZ9vsovDnMuBePQxKvjpXZ1FOPvwnYcaAiJ7EALw_wcB" target="_blank">Claretta J. Bellamy on <i>The Story Exchange</i></a> and <a href="https://parade.com/living/gen-alpha-slang" target="_blank">Kellye Fox on <i>Parade</i></a>.</p>
+      <button class="play-again hide">Play Again!</button><br>
+      <p class="credit">
+        Original game by
+        <a href="https://skillcrush.github.io/guess-the-word/" target="_blank"
+          ><i class="fa-solid fa-paw"></i> Skillcrush</a
+        ><br>Coded and re-designed by
+        <a href="https://github.com/alison-ah" target="_blank"
+          ><i class="fa-brands fa-github"></i> Alison Holland</a
+        ><br><span
+          >Terms and definitions by
+          <a
+            href="https://thestoryexchange.org/gen-alpha-slang-101-how-to-understand-kids-this-back-to-school-season/?fbclid=IwZXh0bgNhZW0BMAABHfA6Ui40eDHzbtrGKzZKRp8FtYKy8s2PqGhQ35W50scFY5X-d_ODuj6Bbw_aem_Epr2ndmlEkAUF3Yw5JG7KQ&gad_source=1&gclid=Cj0KCQjwm5e5BhCWARIsANwm06h48PKIIWbeQo7iRw1-HdrMUZ9vsovDnMuBePQxKvjpXZ1FOPvwnYcaAiJ7EALw_wcB"
+            target="_blank"
+            >Claretta J. Bellamy on <i>The Story Exchange</i></a
+          >
+          and
+          <a href="https://parade.com/living/gen-alpha-slang" target="_blank"
+            >Kellye Fox on <i>Parade</i></a
+          >.</span
+        >
+      </p>
     </div>
   </body>
-
- </html>
+</html>
