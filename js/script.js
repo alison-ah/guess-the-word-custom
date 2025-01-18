@@ -115,7 +115,7 @@ const updateGuessesRemaining = function (guess) {
     }
 
     if (remainingGuesses === 0) {
-        messages.innerHTML = `Game over. The slang was "${word}." Better luck next time!<br><img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTdhZzZuZHpyeGNuZmltdDY1eTI2bHRrb2t0ZDFjNnlvZGF6eXpmZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ESzxkrVH853WoBiBgP/giphy.gif" alt="Noob"></span>.`;
+        messages.innerHTML = `Game over. The slang was "${word}." Better luck next time!<br><img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTdhZzZuZHpyeGNuZmltdDY1eTI2bHRrb2t0ZDFjNnlvZGF6eXpmZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ESzxkrVH853WoBiBgP/giphy.gif" alt="Noob"></span>`;
         remainingGuessesSpan.innerText = `${remainingGuesses} guess`;
         startOver();
     } else if (remainingGuesses === 1) {
