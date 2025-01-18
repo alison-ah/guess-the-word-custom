@@ -22,7 +22,7 @@ h1 {
   font-family: "Galindo", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 2em;
+  font-size: 2.5em;
   text-align: center;
 }
 
@@ -30,7 +30,7 @@ h1 span {
   font-style: italic;
   font-weight: bold;
   line-height: 1em;
-  font-size: 3em;
+  font-size: 2.75em;
   color: #39FF14;
 }
 
@@ -46,7 +46,7 @@ h1 span {
 }
 
 .remaining {
-  font-size: 1.15em;
+  font-size: 1.5em;
 }
 
 .hide {
@@ -56,7 +56,7 @@ h1 span {
 .highlight {
   padding: 0.25em;
   background: #ffe2d6;
-  font-size: 1em;
+  font-size: 1.25em;
 }
 
 .underline {
@@ -68,7 +68,7 @@ h1 span {
   font-family: "Galindo", sans-serif;
   letter-spacing: .8em;
   color:  #39FF14;
-  font-size: 1.5em;
+  font-size: 1.75em;
 }
 
 .guessed-letters {
@@ -94,14 +94,14 @@ h1 span {
 .guess-form label {
   width: 100%;
   font-weight: normal;
-  font-size: .8em;
+  font-size: 1em;
   text-align: center;
 }
 
 input {
   width: 2.25em;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.75em;
   margin-top: 0.5em;
   padding: 0.5em;
   border: 3px solid #05A9FF;
@@ -120,8 +120,8 @@ input:focus {
   border-radius: 50px;
   margin-top: 1em;
   color: #fff;
-  background-color: #05A9FF;
-  font-size: 1em;
+  background-color: #005C8E;
+  font-size: 1.25em;
   align-self: center;
   outline: none;
   border: 0;
@@ -150,13 +150,13 @@ input:focus {
   margin: 0;
   font-family: "Source Sans 3", sans-serif;
   font-style: normal;
-  font-size: 0.75em;
+  font-size: 1em;
   line-height: 150%;
   color: #fff;
 }
 
 .credit span{
-  font-size: 0.5em;
+  font-size: 0.75em;
   padding-top: 1em; 
 }
 
