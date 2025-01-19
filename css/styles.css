@@ -92,6 +92,7 @@ h1 span {
 .message {
   text-align: center;
   width: 90%;
+  max-width: 300px;
 }
 
 img {

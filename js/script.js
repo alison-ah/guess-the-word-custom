@@ -24,6 +24,7 @@ const selectRandomSlang = function (slang) {
     const randomSlang = slang[randomIndex];
     word = randomSlang.term;
     hint = randomSlang.definition;
+    placeholder(word);
 }
 
 
