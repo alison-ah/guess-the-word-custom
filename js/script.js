@@ -35,7 +35,11 @@ getSlang();
 const placeholder = function (word) {
     const placeholderLetters = [];
     for (const letter of word) {
-        placeholderLetters.push("●");
+        if ((letter === " ") || (letter === "’") || (letter === ",") || (letter === "-") || (letter === "?")){
+        placeholderLetters.push(letter);
+        }else{
+            placeholderLetters.push("●");
+        }
     }
     progress.innerText = placeholderLetters.join("");
 };
@@ -56,13 +60,13 @@ guessButton.addEventListener("click", function (e) {
 });
 
 const validateInput = function (input) {
-    const acceptedLetter = "";
+    const acceptedLetter = /[a-zA-Z]/;
     if (input.length === 0) {
-        messages.innerText = `Please type a character.`;
+        messages.innerText = `Please type a letter.`;
     } else if (input.length > 1) {
-        messages.innerText = `Please enter ONE character at a time.`;
+        messages.innerText = `Please enter ONE letter at a time.`;
     } else if (!input.match(acceptedLetter)) {
-        messages.innerText = `Please enter a character.`;
+        messages.innerText = `Letters only, please.`;
     } else {
         return input;
     }
@@ -96,7 +100,7 @@ const updateWord = function (guessedLettersList) {
     const wordArray = wordUpper.split("");
     const revealWord = [];
     for (const letter of wordArray) {
-      if (guessedLettersList.includes(letter)) {
+      if (guessedLettersList.includes(letter) || (letter === " ") || (letter === "’") || (letter === ",") || (letter === "-") || (letter === "?")){
         revealWord.push(letter.toUpperCase());
       } else {
         revealWord.push("●");
@@ -145,7 +149,7 @@ hintButton.addEventListener("click", function () {
 const startOver = function() {
     guessButton.classList.add("hide");
     remainingGuessesElement.classList.add("hide");
-    //guessedLetters.classList.add("hide"); I've hidden the "guessed-letters" until I can figure out how to display a "space" without confusion.
+    guessedLetters.classList.add("hide");
     playAgainButton.classList.remove("hide");
     hintButton.classList.add("hide");
 };
@@ -164,7 +168,7 @@ playAgainButton.addEventListener("click", function () {
     //reset UI
     guessButton.classList.remove("hide");
     remainingGuessesElement.classList.remove("hide");
-    //guessedLetters.classList.remove("hide"); I've hidden the "guessed-letters" until I can figure out how to display a "space" without confusion.
+    guessedLetters.classList.remove("hide");
     playAgainButton.classList.add("hide");
     hintButton.classList.remove("hide");
     hintMessage.innerHTML = "";
